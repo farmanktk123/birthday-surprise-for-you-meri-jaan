@@ -1,0 +1,510 @@
+
+
+.nopage-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background:
+    radial-gradient(
+      circle at 20% 10%,
+      #2c1458 0%,
+      #120827 35%,
+      #070313 100%
+    );;
+}
+
+/* =========================================
+   🌙 MAIN CONTAINER
+========================================= */
+
+.main-container {
+
+    width: 350px;
+    min-height: 230px;
+
+    background-color: white;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   ❤️ PAGE CONTENT
+========================================= */
+
+.no-page-content {
+
+    width: 100%;
+
+    min-height: 190px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   ❤️ HEADING
+========================================= */
+
+.no-page-content h2 {
+
+    margin: 0 0 8px 0;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: rgb(245, 99, 123);
+
+    text-align: center;
+}
+
+
+/* =========================================
+   ✍️ TYPEWRITER
+========================================= */
+
+.typewriter {
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    font-family:
+        'Dancing Script',
+        cursive;
+
+    text-align: center;
+
+    color: black;
+
+    margin: 4px 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    border-right: 3px solid #e75480;
+
+    width: 0;
+
+    animation:
+        typing 2s steps(50, end) forwards,
+        blink 0.7s step-end infinite;
+}
+
+
+/* =========================================
+   📝 COMPLETED PARAGRAPHS
+========================================= */
+
+.completed-para {
+
+    font-family:
+        'Dancing Script',
+        cursive;
+
+    font-size: 14px;
+
+    margin: 4px 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: black;
+}
+
+
+/* =========================================
+   ⌨️ TYPING
+========================================= */
+
+@keyframes typing {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+/* =========================================
+   ✨ BLINK
+========================================= */
+
+@keyframes blink {
+
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+/* =========================================
+   ❤️ BACK BUTTON
+========================================= */
+
+#backbtn {
+
+    width: 110px;
+
+    height: 38px;
+
+    margin-top: 10px;
+
+    padding: 8px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background-color: #b66d6d;
+
+    color: #333;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Hover */
+
+#backbtn:hover {
+
+    background-color: #e75480;
+
+    color: white;
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 0 15px rgba(255, 105, 180, 0.8),
+        0 0 35px rgba(255, 105, 180, 0.5);
+}
+
+
+/* Click */
+
+#backbtn:active {
+
+    transform: scale(0.88);
+}
+
+
+/* Disabled */
+
+#backbtn:disabled {
+
+    cursor: default;
+
+    opacity: 0.7;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================
+   ⭐ FULL SCREEN TRANSITION
+========================================= */
+
+.no-star-transition {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    overflow: hidden;
+
+    z-index: 999999;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 105, 180, 0.20),
+            rgba(10, 5, 15, 0.97) 65%
+        );
+
+    animation:
+        transitionBackground 1.1s ease forwards;
+}
+
+
+/* =========================================
+   ⭐ STARS
+========================================= */
+
+.no-transition-star {
+
+    position: absolute;
+
+    color: white;
+
+    font-size: 13px;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 12px #ff8acb,
+        0 0 25px #ff4fa8;
+
+    animation:
+        starMove 1s ease-out forwards;
+}
+
+
+/* =========================================
+   ⭐ STAR MOVEMENT
+========================================= */
+
+@keyframes starMove {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.1)
+            rotate(0deg);
+    }
+
+
+    20% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(90deg);
+    }
+
+
+    60% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.8)
+            rotate(220deg);
+    }
+
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            scale(3)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   💗 CENTER GLOW
+========================================= */
+
+.no-transition-glow {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        rgba(255, 105, 180, 0.45);
+
+    filter: blur(25px);
+
+    animation:
+        glowExpand 1.1s ease-out forwards;
+}
+
+
+/* =========================================
+   💗 GLOW ANIMATION
+========================================= */
+
+@keyframes glowExpand {
+
+    0% {
+
+        width: 50px;
+
+        height: 50px;
+
+        opacity: 0;
+    }
+
+
+    25% {
+
+        width: 150px;
+
+        height: 150px;
+
+        opacity: 1;
+    }
+
+
+    60% {
+
+        width: 500px;
+
+        height: 500px;
+
+        opacity: 0.7;
+    }
+
+
+    100% {
+
+        width: 1400px;
+
+        height: 1400px;
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   🌌 BACKGROUND
+========================================= */
+
+@keyframes transitionBackground {
+
+    0% {
+
+        opacity: 0;
+    }
+
+
+    30% {
+
+        opacity: 1;
+    }
+
+
+    100% {
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   📱 RESPONSIVE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .main-container {
+
+        width: 90%;
+
+        min-height: 230px;
+
+        padding: 18px;
+    }
+
+
+    .no-page-content {
+
+        min-height: 190px;
+    }
+
+
+    .no-page-content h2 {
+
+        font-size: 21px;
+    }
+
+
+    .typewriter,
+    .completed-para {
+
+        font-size: 13px;
+    }
+
+
+    #backbtn {
+
+        width: 105px;
+
+        height: 36px;
+
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,574 @@
+/* =========================================
+   🌌 MAIN BACKGROUND
+========================================= */
+
+.new-images-container
+{
+    width: 100vw;
+    height: 100vh;
+   
+}
+
+
+.new-images-page {
+    min-height: 100vh;
+    width: 100%;
+
+    padding: 50px 25px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255, 105, 180, 0.12),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #090510,
+            #160b20,
+            #090510
+        );
+
+    color: white;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   🌸 CONTENT
+========================================= */
+
+.new-images-content {
+    width: 100%;
+    max-width: 1200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    opacity: 1;
+    transform: translateY(0) scale(1);
+
+    transition:
+        opacity 0.9s ease,
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.new-content-exit {
+    opacity: 0;
+    transform: translateY(-35px) scale(0.96);
+    pointer-events: none;
+}
+
+
+/* =========================================
+   💖 HEADING
+========================================= */
+
+.new-images-heading {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.new-images-heading p {
+    margin: 0 0 10px;
+
+    color: #ff9bd2;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    animation: newHeadingAppear 1s ease both;
+}
+
+.new-images-heading h1 {
+    margin: 0;
+
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.2;
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ffb6df,
+        #ffffff
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    animation: newHeadingAppear 1.2s ease both;
+}
+
+@keyframes newHeadingAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   🖼️ GRID
+========================================= */
+
+.grid-container {
+    width: 100%;
+    max-width: 1000px;
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    gap: 28px;
+
+    justify-items: center;
+    align-items: stretch;
+}
+
+
+/* =========================================
+   🤍 CARDS
+========================================= */
+
+.cards {
+    width: 100%;
+    max-width: 100%;
+    height: 250px;
+
+    padding: 12px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(255, 105, 180, 0.08);
+
+    overflow: hidden;
+
+    opacity: 0;
+    animation: newCardAppear 0.8s ease forwards;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Card animation delay */
+
+.cards:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.cards:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.cards:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.cards:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.cards:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.cards:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.cards:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.cards:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+.cards:nth-child(9) {
+    animation-delay: 0.9s;
+}
+
+@keyframes newCardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Card hover */
+
+.cards:hover {
+    transform: translateY(-8px) scale(1.02);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.45),
+        0 0 28px rgba(255, 105, 180, 0.3);
+}
+
+
+/* =========================================
+   📸 CARD IMAGE
+========================================= */
+
+.cards img {
+    display: block;
+
+    width: 40%;
+    height: auto;
+    margin-right: 15px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+    object-position:  30%;
+
+    border: none;
+    border-radius: 50px;
+
+    background: #f5f5f5;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.cards:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+
+/* =========================================
+   ✍️ CARD TEXT
+========================================= */
+
+.cards p {
+    flex: 1;
+    max-width: 450px;
+    margin: 0;
+
+    color: #e54865;
+
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 800;
+
+    text-align: left;
+}
+
+
+/* =========================================
+   💖 BUTTON
+========================================= */
+
+#newbtn {
+    margin-top: 45px;
+    padding: 15px 32px;
+
+    border: none;
+    border-radius: 50px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #ff4fa3,
+        #d91672
+    );
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 22px rgba(255, 20, 130, 0.3);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#newbtn:hover {
+    transform: translateY(-4px) scale(1.04);
+
+    box-shadow:
+        0 12px 30px rgba(255, 20, 130, 0.5);
+}
+
+#newbtn:active {
+    transform: scale(0.96);
+}
+
+#newbtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   ⭐ STAR TRANSITION
+========================================= */
+
+.new-star-transition {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 999999;
+    pointer-events: none;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 105, 180, 0.18),
+            rgba(9, 5, 16, 0.97) 70%
+        );
+
+    opacity: 0;
+
+    animation: newTransitionBackground 1.35s ease forwards;
+}
+
+.new-transition-star {
+    position: absolute;
+
+    color: white;
+    font-size: 14px;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 12px #ff9bd2,
+        0 0 25px #ff4fa8;
+
+    animation:
+        newSmoothStarMove 1.25s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+}
+
+@keyframes newSmoothStarMove {
+    0% {
+        opacity: 0;
+        transform: scale(0.1) rotate(0deg);
+    }
+
+    20% {
+        opacity: 0.9;
+        transform: scale(0.8) rotate(90deg);
+    }
+
+    55% {
+        opacity: 1;
+        transform: scale(1.5) rotate(220deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2.8) rotate(360deg);
+    }
+}
+
+
+/* Center glow */
+
+.new-transition-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: rgba(255, 105, 180, 0.4);
+    filter: blur(28px);
+
+    animation:
+        newSmoothGlowExpand 1.35s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+}
+
+@keyframes newSmoothGlowExpand {
+    0% {
+        width: 40px;
+        height: 40px;
+        opacity: 0;
+    }
+
+    25% {
+        width: 130px;
+        height: 130px;
+        opacity: 0.8;
+    }
+
+    60% {
+        width: 450px;
+        height: 450px;
+        opacity: 0.55;
+    }
+
+    100% {
+        width: 1500px;
+        height: 1500px;
+        opacity: 0;
+    }
+}
+
+@keyframes newTransitionBackground {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   📱 TABLET
+========================================= */
+
+@media (max-width: 950px) {
+    .grid-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .cards {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================
+   📱 MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+    .new-images-page {
+        padding: 35px 15px;
+    }
+
+    .new-images-heading {
+        margin-bottom: 28px;
+    }
+
+    .new-images-heading p {
+        font-size: 15px;
+    }
+
+    .new-images-heading h1 {
+        font-size: 28px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .cards {
+        width: 100%;
+        max-width: 390px;
+    }
+
+    .cards img {
+        width: 120px;
+        height: 155px;
+    }
+
+    .cards p {
+        font-size: 14px;
+    }
+
+    #newbtn {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 32px;
+    }
+}
+
+
+/* =========================================
+   📱 SMALL MOBILE
+========================================= */
+
+@media (max-width: 390px) {
+    .cards {
+        padding: 9px;
+        gap: 10px;
+    }
+
+    .cards img {
+        width: 95px;
+        height: 135px;
+    }
+
+    .cards p {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================
+   ♿ REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

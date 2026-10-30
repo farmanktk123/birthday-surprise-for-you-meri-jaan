@@ -1,0 +1,1117 @@
+/* =========================================
+   CAKE PAGE
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+.cake-page {
+
+  width: 100vw;
+
+  height: 100vh;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 50px 20px 20px;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      #2c1458 0%,
+      #120827 35%,
+      #070313 100%
+    );
+
+}
+
+
+/* =========================================
+   Background Stars
+========================================= */
+
+.background-stars {
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+}
+
+
+.background-star {
+
+  position: absolute;
+
+  width: 3px;
+
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 0 7px white;
+
+  opacity: 0.5;
+
+  animation:
+    starTwinkle 2.5s ease-in-out infinite;
+
+}
+
+
+@keyframes starTwinkle {
+
+  0%,
+  100% {
+
+    opacity: 0.2;
+
+    transform: scale(0.7);
+
+  }
+
+  50% {
+
+    opacity: 1;
+
+    transform: scale(1.4);
+
+  }
+
+}
+
+
+/* =========================================
+   Heading
+========================================= */
+
+.cake-heading {
+
+  position: relative;
+
+  z-index: 5;
+
+  text-align: center;
+
+  animation:
+    headingAppear 0.9s ease both;
+
+}
+
+
+@keyframes headingAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(-25px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+.cake-eyebrow {
+
+  color: #ff8dc0;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 12px;
+
+}
+
+
+.cake-heading h1 {
+
+  margin: 0;
+
+  font-family: "Pacifico", cursive;
+
+  font-size:
+    clamp(2.5rem, 7vw, 5rem);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+}
+
+
+.cake-subtitle {
+
+  margin-top: 15px;
+
+  color: #d9d1e8;
+
+  font-size: 1rem;
+
+}
+
+
+/* =========================================
+   Cake Scene
+========================================= */
+
+.cake-scene {
+
+  position: relative;
+
+  width: min(700px, 100%);
+
+  height: 500px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  margin-top: 5px;
+
+}
+
+
+/* =========================================
+   Hanging Lamp
+========================================= */
+
+.birthday-lamp {
+
+  position: absolute;
+
+  top: -20px;
+
+  right: 12%;
+
+  z-index: 10;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+}
+
+
+.lamp-wire {
+
+  width: 5px;
+
+  height: 70px;
+
+  background: #777;
+
+  border-radius: 10px;
+
+}
+
+
+.lamp-light {
+
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 50%;
+
+  background: #fff4a8;
+
+  box-shadow:
+    0 0 15px #fff4a8,
+    0 0 35px #ffe680,
+    0 0 70px rgba(255, 230, 128, 0.6);
+
+  animation:
+    lampGlow 1.5s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes lampGlow {
+
+  from {
+
+    box-shadow:
+      0 0 15px #fff4a8,
+      0 0 30px #ffe680,
+      0 0 55px rgba(255, 230, 128, 0.4);
+
+  }
+
+  to {
+
+    box-shadow:
+      0 0 20px #fff4a8,
+      0 0 45px #ffe680,
+      0 0 90px rgba(255, 230, 128, 0.7);
+
+  }
+
+}
+
+
+.lamp-shade {
+
+  width: 125px;
+
+  height: 50px;
+
+  margin-top: -8px;
+
+  background:
+    linear-gradient(
+      #333,
+      #171717
+    );
+
+  border-radius:
+    50% 50% 12px 12px;
+
+  box-shadow:
+    0 12px 25px
+    rgba(255, 230, 128, 0.18);
+
+}
+
+
+/* =========================================
+   Cake
+========================================= */
+
+.cake {
+
+  position: relative;
+
+  width: 310px;
+
+  height: 265px;
+
+  z-index: 5;
+
+  animation:
+    cakeRise 1.4s
+    cubic-bezier(.2,.8,.2,1)
+    both;
+
+}
+
+
+@keyframes cakeRise {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(280px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================================
+   Cake Top
+========================================= */
+
+.cake-top {
+
+  position: absolute;
+
+  top: 15px;
+
+  left: 20px;
+
+  width: 270px;
+
+  height: 70px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd8e7,
+      #ffb2cf
+    );
+
+  box-shadow:
+    inset 0 -8px 12px
+    rgba(200, 50, 110, 0.12);
+
+  z-index: 4;
+
+}
+
+
+/* =========================================
+   Frosting
+========================================= */
+
+.frosting {
+
+  position: absolute;
+
+  top: 45px;
+
+  left: 17px;
+
+  width: 276px;
+
+  height: 65px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      #fff8fb,
+      #ffe3ed
+    );
+
+  z-index: 6;
+
+}
+
+
+.frosting span {
+
+  position: absolute;
+
+  width: 30px;
+
+  height: 40px;
+
+  border-radius:
+    0 0 50% 50%;
+
+  background: #fff3f7;
+
+  bottom: -18px;
+
+}
+
+
+.frosting span:nth-child(1) {
+  left: 30px;
+}
+
+
+.frosting span:nth-child(2) {
+  left: 95px;
+}
+
+
+.frosting span:nth-child(3) {
+  left: 160px;
+}
+
+
+.frosting span:nth-child(4) {
+  left: 225px;
+}
+
+
+/* =========================================
+   Cake Layers
+========================================= */
+
+.cake-layer {
+
+  position: absolute;
+
+  left: 30px;
+
+  width: 250px;
+
+  border-radius: 18px;
+
+}
+
+
+.cake-layer-one {
+
+  top: 82px;
+
+  height: 78px;
+
+  background:
+    linear-gradient(
+      #ff9fc2,
+      #ed5f94
+    );
+
+  box-shadow:
+    inset 0 -8px 15px
+    rgba(170, 30, 90, 0.15);
+
+}
+
+
+.cake-layer-two {
+
+  top: 155px;
+
+  height: 70px;
+
+  background:
+    linear-gradient(
+      #ffb7d1,
+      #df4e8b
+    );
+
+  box-shadow:
+    inset 0 -8px 15px
+    rgba(170, 30, 90, 0.15);
+
+}
+
+
+/* =========================================
+   Cream Layer
+========================================= */
+
+.cream-layer {
+
+  position: absolute;
+
+  top: 142px;
+
+  left: 25px;
+
+  width: 260px;
+
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  z-index: 5;
+
+  box-shadow:
+    0 2px 5px
+    rgba(0, 0, 0, 0.1);
+
+}
+
+
+/* =========================================
+   Cake Decorations
+========================================= */
+
+.cake-decoration {
+
+  display: flex;
+
+  justify-content: space-around;
+
+  align-items: center;
+
+  padding: 18px 25px;
+
+}
+
+
+.cake-decoration span {
+
+  font-size: 10px;
+
+  color: #ffe680;
+
+  text-shadow:
+    0 0 7px
+    rgba(255, 230, 128, 0.8);
+
+}
+
+
+/* =========================================
+   Cake Base
+========================================= */
+
+.cake-base {
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 10px;
+
+  width: 290px;
+
+  height: 45px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      #ff82ad,
+      #df4d87
+    );
+
+  box-shadow:
+    0 12px 25px
+    rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* =========================================
+   Candles
+========================================= */
+
+.candle {
+
+  position: absolute;
+
+  bottom: 28px;
+
+  width: 16px;
+
+  height: 58px;
+
+  border-radius: 6px;
+
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #fff,
+      #fff 7px,
+      #ff72aa 7px,
+      #ff72aa 12px
+    );
+
+  z-index: 10;
+
+}
+
+
+.candle-one {
+
+  left: 65px;
+
+}
+
+
+.candle-two {
+
+  left: 127px;
+
+}
+
+
+.candle-three {
+
+  left: 189px;
+
+}
+
+
+/* =========================================
+   Candle Flames
+========================================= */
+
+.flame {
+
+  position: absolute;
+
+  width: 16px;
+
+  height: 22px;
+
+  top: -22px;
+
+  left: 0;
+
+  border-radius:
+    50% 50% 45% 45%;
+
+  background:
+    #ffd166;
+
+  box-shadow:
+    0 0 10px #ffd166,
+    0 0 20px #ffb703,
+    0 0 30px rgba(255, 183, 3, 0.6);
+
+  animation:
+    flameFlicker 0.25s
+    ease-in-out infinite alternate;
+
+}
+
+
+@keyframes flameFlicker {
+
+  from {
+
+    transform:
+      scale(0.9)
+      rotate(-3deg);
+
+  }
+
+  to {
+
+    transform:
+      scale(1.12)
+      rotate(4deg);
+
+  }
+
+}
+
+
+/* =========================================
+   Cake Slices
+========================================= */
+
+.cake-slice {
+
+  position: absolute;
+
+  z-index: 8;
+
+  font-size: 4rem;
+
+  opacity: 0;
+
+}
+
+
+.slice-one {
+
+  left: 8%;
+
+  bottom: 20px;
+
+  animation:
+    sliceSlide 1s
+    ease-out
+    1s forwards;
+
+}
+
+
+.slice-two {
+
+  right: 8%;
+
+  bottom: 35px;
+
+  animation:
+    sliceSlide 1s
+    ease-out
+    1.5s forwards;
+
+}
+
+
+.slice-three {
+
+  left: 17%;
+
+  bottom: 105px;
+
+  animation:
+    sliceSlide 1s
+    ease-out
+    2s forwards;
+
+}
+
+
+@keyframes sliceSlide {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(170px)
+      rotate(-20deg)
+      scale(0.5);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      rotate(0)
+      scale(1);
+
+  }
+
+}
+
+
+/* =========================================
+   Cake Shadow
+========================================= */
+
+.cake-shadow {
+
+  position: absolute;
+
+  bottom: 10px;
+
+  width: 350px;
+
+  height: 35px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 0, 0, 0.35);
+
+  filter: blur(10px);
+
+  animation:
+    shadowAppear 1.5s ease both;
+
+}
+
+
+@keyframes shadowAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform: scale(0.5);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+  }
+
+}
+
+
+/* =========================================
+   Next Button
+========================================= */
+
+.cake-next-btn {
+
+  position: relative;
+
+  z-index: 20;
+
+  border: none;
+
+  outline: none;
+
+  padding: 14px 27px;
+
+  margin-top: 10px;
+
+  border-radius: 999px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff4f9a,
+      #ff77b5
+    );
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px
+    rgba(255, 79, 154, 0.28);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+}
+
+
+.cake-next-btn:hover {
+
+  transform:
+    translateY(-4px)
+    scale(1.03);
+
+  box-shadow:
+    0 15px 40px
+    rgba(255, 79, 154, 0.5);
+
+}
+
+
+.cake-next-btn:active {
+
+  transform:
+    scale(0.94);
+
+}
+
+
+/* =========================================
+   Star Transition
+========================================= */
+
+.star-transition {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  pointer-events: none;
+
+}
+
+
+.transition-star {
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  width: 4px;
+
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 0 8px white,
+    0 0 18px white;
+
+  animation:
+    transitionStar
+    0.9s
+    ease-out
+    forwards;
+
+}
+
+
+@keyframes transitionStar {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+      translate(0, 0)
+      scale(0.2);
+
+  }
+
+  20% {
+
+    opacity: 1;
+
+  }
+
+  100% {
+
+    opacity: 0;
+
+    transform:
+      translate(var(--x), var(--y))
+      scale(1.5);
+
+  }
+
+}
+
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 700px) {
+
+  .cake-page {
+
+    padding-top: 70px;
+
+  }
+
+
+  .cake-scene {
+
+    height: 430px;
+
+  }
+
+
+  .cake {
+
+    transform: scale(0.85);
+
+    transform-origin:
+      bottom center;
+
+  }
+
+
+  .birthday-lamp {
+
+    right: 3%;
+
+    transform: scale(0.75);
+
+    transform-origin: top right;
+
+  }
+
+
+  .cake-slice {
+
+    font-size: 3rem;
+
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .cake-heading h1 {
+
+    font-size: 2.5rem;
+
+  }
+
+
+  .cake-subtitle {
+
+    font-size: 0.9rem;
+
+  }
+
+
+  .cake-scene {
+
+    height: 400px;
+
+  }
+
+
+  .cake {
+
+    transform: scale(0.7);
+
+    transform-origin:
+      bottom center;
+
+  }
+
+
+  .cake-slice {
+
+    font-size: 2.5rem;
+
+  }
+
+
+  .slice-one {
+
+    left: 2%;
+
+  }
+
+
+  .slice-two {
+
+    right: 2%;
+
+  }
+
+
+  .slice-three {
+
+    left: 5%;
+
+    bottom: 80px;
+
+  }
+
+
+  .birthday-lamp {
+
+    right: -5%;
+
+    transform: scale(0.6);
+
+  }
+
+}
+
+
+#lastbtn
+{
+    margin-top: 8px;
+}

@@ -1,0 +1,1067 @@
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.last-main-container
+{
+  width: 100vw;
+  height: 100vh;
+}
+
+.end-page {
+  min-height: 100vh;
+  width: 100%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(184, 63, 180, 0.22),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 52, 160, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #05010b,
+      #12051f,
+      #08020f
+    );
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.end-stars {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+.end-star {
+  position: absolute;
+
+  color: white;
+
+  font-size: 12px;
+
+  opacity: 0.25;
+
+  animation:
+    endTwinkle
+    3.5s
+    infinite
+    ease-in-out;
+}
+
+
+@keyframes endTwinkle {
+
+  0%,
+  100% {
+    opacity: 0.15;
+
+    transform:
+      scale(0.6);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      scale(1.5);
+
+    text-shadow:
+      0 0 12px #ff9be2,
+      0 0 25px #ff4fc3;
+  }
+}
+
+
+/* =====================================================
+   MOON GLOW
+===================================================== */
+
+.moon-glow {
+  position: absolute;
+
+  top: 8%;
+
+  right: 10%;
+
+  width: 120px;
+
+  height: 120px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        255,
+        255,
+        255,
+        0.9
+      ),
+      rgba(
+        255,
+        210,
+        245,
+        0.35
+      ) 45%,
+      transparent 70%
+    );
+
+  filter:
+    blur(2px);
+
+  opacity: 0.65;
+
+  box-shadow:
+    0 0 40px
+      rgba(
+        255,
+        190,
+        240,
+        0.3
+      ),
+    0 0 100px
+      rgba(
+        255,
+        100,
+        210,
+        0.15
+      );
+
+  animation:
+    moonPulse
+    4s
+    infinite
+    ease-in-out;
+}
+
+
+@keyframes moonPulse {
+
+  0%,
+  100% {
+    transform:
+      scale(0.95);
+
+    opacity: 0.55;
+  }
+
+  50% {
+    transform:
+      scale(1.08);
+
+    opacity: 0.8;
+  }
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.floating-hearts {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.floating-hearts span {
+  position: absolute;
+
+  bottom: -60px;
+
+  font-size: 20px;
+
+  opacity: 0;
+
+  animation:
+    heartFloat
+    8s
+    linear
+    infinite;
+}
+
+
+/* Individual positions */
+
+.floating-hearts span:nth-child(1) {
+  left: 8%;
+  animation-delay: 1s;
+}
+
+.floating-hearts span:nth-child(2) {
+  left: 20%;
+  animation-delay: 4s;
+}
+
+.floating-hearts span:nth-child(3) {
+  left: 35%;
+  animation-delay: 2s;
+}
+
+.floating-hearts span:nth-child(4) {
+  left: 52%;
+  animation-delay: 6s;
+}
+
+.floating-hearts span:nth-child(5) {
+  left: 67%;
+  animation-delay: 3s;
+}
+
+.floating-hearts span:nth-child(6) {
+  left: 78%;
+  animation-delay: 5s;
+}
+
+.floating-hearts span:nth-child(7) {
+  left: 90%;
+  animation-delay: 1.5s;
+}
+
+.floating-hearts span:nth-child(8) {
+  left: 45%;
+  animation-delay: 7s;
+}
+
+
+@keyframes heartFloat {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(0)
+      scale(0.5)
+      rotate(0deg);
+  }
+
+  15% {
+    opacity: 0.8;
+  }
+
+  70% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translateY(-110vh)
+      scale(1.3)
+      rotate(30deg);
+  }
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.end-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(
+    900px,
+    92%
+  );
+
+  text-align: center;
+
+  padding:
+    50px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =====================================================
+   SMALL TEXT
+===================================================== */
+
+.end-small-text {
+  margin: 0 0 20px;
+
+  color: #ff9ddd;
+
+  font-size: 15px;
+
+  letter-spacing: 4px;
+
+  opacity: 0;
+
+  animation:
+    fadeDown
+    1s
+    ease
+    forwards;
+}
+
+
+/* =====================================================
+   MAIN TITLE
+===================================================== */
+
+.end-title {
+  margin: 0;
+
+  max-width: 850px;
+
+  font-size:
+    clamp(
+      35px,
+      6vw,
+      70px
+    );
+
+  line-height: 1.1;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #ffb1e3,
+      #d6b7ff,
+      #ffffff
+    );
+
+  background-size:
+    300% auto;
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+
+  color: transparent;
+
+  -webkit-text-fill-color: transparent;
+
+  opacity: 0;
+
+  animation:
+    titleReveal
+    1.5s
+    0.7s
+    ease
+    forwards,
+    gradientMove
+    5s
+    2.2s
+    linear
+    infinite;
+}
+
+
+@keyframes titleReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(40px)
+      scale(0.9);
+
+    filter:
+      blur(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+    filter:
+      blur(0);
+  }
+}
+
+
+@keyframes gradientMove {
+
+  0% {
+    background-position:
+      0% 50%;
+  }
+
+  50% {
+    background-position:
+      100% 50%;
+  }
+
+  100% {
+    background-position:
+      0% 50%;
+  }
+}
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.end-subtitle {
+  margin:
+    18px 0 0;
+
+  color: #ffd4ee;
+
+  font-size:
+    clamp(
+      18px,
+      3vw,
+      28px
+    );
+
+  font-weight: 400;
+
+  letter-spacing: 1px;
+
+  opacity: 0;
+
+  animation:
+    fadeUp
+    1s
+    2s
+    ease
+    forwards;
+}
+
+
+/* =====================================================
+   LINE
+===================================================== */
+
+.end-line {
+  width: 180px;
+
+  height: 2px;
+
+  margin:
+    30px 0;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  overflow: hidden;
+}
+
+.end-line span {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #ff75c8,
+      #ffffff,
+      #ff75c8,
+      transparent
+    );
+
+  transform:
+    translateX(-100%);
+
+  animation:
+    lineMove
+    2s
+    2.7s
+    ease
+    forwards;
+}
+
+
+@keyframes lineMove {
+
+  to {
+    transform:
+      translateX(100%);
+  }
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.end-message {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-top: 5px;
+}
+
+
+.end-message p {
+  margin: 0;
+
+  color: #d9cce5;
+
+  font-size:
+    clamp(
+      15px,
+      2vw,
+      18px
+    );
+
+  opacity: 0;
+
+  transform:
+    translateY(20px);
+
+  animation:
+    messageReveal
+    0.9s
+    ease
+    forwards;
+}
+
+
+.end-message .message-one {
+  animation-delay: 3.1s;
+}
+
+.end-message .message-two {
+  animation-delay: 3.8s;
+}
+
+.end-message .message-three {
+  animation-delay: 4.5s;
+}
+
+.end-message .message-four {
+  animation-delay: 5.2s;
+}
+
+
+@keyframes messageReveal {
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* =====================================================
+   FINAL LOVE
+===================================================== */
+
+.final-love {
+  margin-top: 45px;
+
+  opacity: 0;
+
+  animation:
+    finalLoveReveal
+    1.5s
+    5.8s
+    ease
+    forwards;
+}
+
+
+.final-heart {
+  display: block;
+
+  font-size: 55px;
+
+  margin-bottom: 10px;
+
+  animation:
+    heartBeat
+    1.5s
+    7s
+    infinite
+    ease-in-out;
+}
+
+
+.final-love h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      30px,
+      5vw,
+      50px
+    );
+
+  color: #ffb5e4;
+
+  text-shadow:
+    0 0 15px
+      rgba(
+        255,
+        80,
+        180,
+        0.7
+      ),
+    0 0 40px
+      rgba(
+        255,
+        80,
+        180,
+        0.3
+      );
+}
+
+
+.final-love p {
+  margin-top: 15px;
+
+  color: #e8dced;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+@keyframes finalLoveReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(40px)
+      scale(0.8);
+
+    filter:
+      blur(8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+    filter:
+      blur(0);
+  }
+}
+
+
+@keyframes heartBeat {
+
+  0%,
+  100% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.2);
+  }
+}
+
+
+/* =====================================================
+   THE END
+===================================================== */
+
+.the-end {
+  margin-top: 50px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  opacity: 0;
+
+  animation:
+    endingReveal
+    2s
+    ease
+    forwards;
+}
+
+
+.end-divider {
+  margin-bottom: 20px;
+
+  color: #ffd88a;
+
+  font-size: 20px;
+
+  letter-spacing: 8px;
+
+  animation:
+    sparklePulse
+    2s
+    infinite
+    ease-in-out;
+}
+
+
+.the-end h3 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      38px,
+      7vw,
+      75px
+    );
+
+  letter-spacing: 12px;
+
+  color: white;
+
+  text-shadow:
+    0 0 10px
+      rgba(
+        255,
+        255,
+        255,
+        0.7
+      ),
+    0 0 30px
+      rgba(
+        255,
+        100,
+        200,
+        0.6
+      );
+
+  animation:
+    endGlow
+    3s
+    infinite
+    ease-in-out;
+}
+
+
+.the-end p {
+  margin:
+    18px 0 5px;
+
+  color: #cdbbda;
+
+  font-size: 16px;
+}
+
+
+.the-end strong {
+  color: #ffb4df;
+
+  font-size: 21px;
+
+  font-weight: 500;
+
+  letter-spacing: 1px;
+}
+
+
+.final-signature {
+  margin-top: 25px;
+
+  color: #9e8eaa;
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+}
+
+
+@keyframes endingReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(40px)
+      scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes endGlow {
+
+  0%,
+  100% {
+    opacity: 0.7;
+
+    text-shadow:
+      0 0 10px
+        rgba(
+          255,
+          255,
+          255,
+          0.5
+        ),
+      0 0 25px
+        rgba(
+          255,
+          100,
+          200,
+          0.4
+        );
+  }
+
+  50% {
+    opacity: 1;
+
+    text-shadow:
+      0 0 20px
+        rgba(
+          255,
+          255,
+          255,
+          0.9
+        ),
+      0 0 50px
+        rgba(
+          255,
+          100,
+          200,
+          0.8
+        );
+  }
+}
+
+
+@keyframes sparklePulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+
+    transform:
+      scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      scale(1.1);
+  }
+}
+
+
+/* =====================================================
+   BOTTOM GLOW
+===================================================== */
+
+.bottom-glow {
+  position: absolute;
+
+  bottom: -150px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  width: 600px;
+
+  height: 300px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      40,
+      170,
+      0.18
+    );
+
+  filter:
+    blur(80px);
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .end-content {
+    padding:
+      35px 10px;
+  }
+
+
+  .moon-glow {
+    width: 80px;
+
+    height: 80px;
+
+    top: 5%;
+
+    right: 5%;
+  }
+
+
+  .end-small-text {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+  }
+
+
+  .end-subtitle {
+    line-height: 1.5;
+  }
+
+
+  .end-message {
+    gap: 10px;
+  }
+
+
+  .end-message p {
+    font-size: 14px;
+  }
+
+
+  .final-love {
+    margin-top: 35px;
+  }
+
+
+  .final-heart {
+    font-size: 45px;
+  }
+
+
+  .final-love p {
+    font-size: 14px;
+  }
+
+
+  .the-end {
+    margin-top: 35px;
+  }
+
+
+  .the-end h3 {
+    font-size: 42px;
+
+    letter-spacing: 7px;
+  }
+
+
+  .the-end strong {
+    font-size: 17px;
+
+    text-align: center;
+  }
+
+
+  .floating-hearts span {
+    font-size: 16px;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL DEVICES
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .end-title {
+    font-size: 31px;
+  }
+
+
+  .end-subtitle {
+    font-size: 17px;
+  }
+
+
+  .end-message p {
+    font-size: 13px;
+  }
+
+
+  .the-end h3 {
+    font-size: 34px;
+
+    letter-spacing: 5px;
+  }
+
+
+  .final-signature {
+    font-size: 11px;
+  }
+
+}

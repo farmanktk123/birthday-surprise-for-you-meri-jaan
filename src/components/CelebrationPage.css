@@ -1,0 +1,620 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.celebration-main-container {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 35px 20px;
+
+  position: relative;
+
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      #32145c 0%,
+      #160a2d 38%,
+      #07030f 100%
+    );
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.celebration-main-container::before {
+  content: "";
+
+  position: fixed;
+
+  width: 300px;
+  height: 300px;
+
+  top: 5%;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 79, 154, 0.10);
+
+  filter: blur(90px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CONTENT BOX
+========================================= */
+
+.celebration-text {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 45px;
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(15px);
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.celebration-heading {
+  width: 100%;
+
+  margin-bottom: 40px;
+
+  text-align: center;
+
+  color: #e91e63;
+
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+
+  line-height: 1.4;
+
+  font-weight: 700;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   PARAGRAPHS
+========================================= */
+
+.completed-celeb-para,
+.typewriter {
+  width: 100%;
+  max-width: 100%;
+
+  margin-bottom: 28px;
+
+  color: #444;
+
+  font-family: "Segoe UI", sans-serif;
+
+  font-size: 22px;
+
+  line-height: 1.8;
+
+  font-weight: 500;
+
+  /*
+    Important:
+    Text box ki width se bahar nahi jayega.
+  */
+  white-space: normal;
+
+  overflow-wrap: anywhere;
+
+  word-break: normal;
+}
+
+
+/* =========================================
+   CURRENT TYPING PARAGRAPH
+========================================= */
+
+.typewriter {
+  color: #d63384;
+}
+
+
+/* =========================================
+   TYPING CHARACTER
+========================================= */
+
+.typing-character {
+  display: inline;
+
+  /*
+    Har character normal text ki tarah
+    wrapping allow karega.
+  */
+  white-space: normal;
+}
+
+
+/* =========================================
+   CURSOR
+========================================= */
+
+.cursor {
+  display: inline-block;
+
+  width: 3px;
+  height: 25px;
+
+  margin-left: 4px;
+
+  vertical-align: middle;
+
+  background: #d63384;
+
+  animation: cursorBlink 0.7s infinite;
+}
+
+@keyframes cursorBlink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================
+   NEXT BUTTON
+========================================= */
+
+#again-celebrate {
+  display: block;
+
+  width: 150px;
+
+  margin: 15px auto 0;
+
+  padding: 13px 20px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff4f9a,
+      #ff77b5
+    );
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(255, 79, 154, 0.3);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#again-celebrate:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.03);
+
+  box-shadow:
+    0 15px 30px rgba(255, 79, 154, 0.45);
+}
+
+#again-celebrate:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+#again-celebrate:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================
+   STAR TRANSITION
+========================================= */
+
+.star-transition {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 105, 180, 0.18),
+      rgba(0, 0, 0, 0.95) 70%
+    );
+
+  animation: transitionBackground 1s ease forwards;
+}
+
+
+/* =========================================
+   TRANSITION STARS
+========================================= */
+
+.transition-star {
+  position: absolute;
+
+  color: white;
+
+  font-size: 12px;
+
+  opacity: 0;
+
+  text-shadow:
+    0 0 5px white,
+    0 0 12px rgba(255, 105, 180, 0.9);
+
+  animation: starFly 1s ease-out forwards;
+}
+
+@keyframes starFly {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(0.2)
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  30% {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      translate(0, 0)
+      rotate(90deg);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      scale(2.5)
+      translate(
+        calc((50vw - 50%) * 1.5),
+        calc((50vh - 50%) * 1.5)
+      )
+      rotate(360deg);
+  }
+
+}
+
+
+/* =========================================
+   CENTER GLOW
+========================================= */
+
+.transition-glow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 100px;
+  height: 100px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: rgba(255, 105, 180, 0.4);
+
+  filter: blur(25px);
+
+  animation: centerGlow 1s ease forwards;
+}
+
+@keyframes centerGlow {
+
+  0% {
+    width: 80px;
+    height: 80px;
+
+    opacity: 0;
+  }
+
+  40% {
+    width: 180px;
+    height: 180px;
+
+    opacity: 1;
+  }
+
+  100% {
+    width: 1200px;
+    height: 1200px;
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================
+   PAGE EXIT
+========================================= */
+
+.celebration-main-container.celebration-exit {
+  animation: pageDisappear 1s ease forwards;
+}
+
+@keyframes pageDisappear {
+
+  0% {
+    opacity: 1;
+
+    transform: scale(1);
+
+    filter: blur(0);
+  }
+
+  60% {
+    opacity: 0.8;
+
+    transform: scale(1.03);
+
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: scale(1.12);
+
+    filter: blur(12px);
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+  .celebration-main-container {
+    padding: 25px 15px;
+  }
+
+  .celebration-text {
+    width: 100%;
+
+    padding: 35px 25px;
+
+    border-radius: 24px;
+  }
+
+  .celebration-heading {
+    font-size: 32px;
+
+    margin-bottom: 32px;
+  }
+
+  .completed-celeb-para,
+  .typewriter {
+    font-size: 19px;
+
+    line-height: 1.75;
+
+    margin-bottom: 26px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .celebration-main-container {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 12px;
+
+    overflow-x: hidden;
+  }
+
+
+  /* Mobile content box */
+
+  .celebration-text {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    padding: 28px 18px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+  }
+
+
+  /* Heading */
+
+  .celebration-heading {
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    font-size: 28px;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* Paragraph */
+
+  .completed-celeb-para,
+  .typewriter {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 25px;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    /*
+      Text ko screen se bahar
+      jane se rokega.
+    */
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+
+    word-break: normal;
+  }
+
+
+  /* Character */
+
+  .typing-character {
+    display: inline;
+
+    white-space: normal;
+  }
+
+
+  /* Cursor */
+
+  .cursor {
+    width: 2px;
+
+    height: 20px;
+
+    margin-left: 3px;
+  }
+
+
+  /* Button */
+
+  #again-celebrate {
+    width: 140px;
+
+    padding: 12px 18px;
+
+    font-size: 16px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .celebration-main-container {
+    padding: 10px;
+  }
+
+  .celebration-text {
+    width: 100%;
+
+    padding: 24px 16px;
+
+    border-radius: 18px;
+  }
+
+
+  .celebration-heading {
+    font-size: 24px;
+
+    line-height: 1.4;
+
+    margin-bottom: 25px;
+  }
+
+
+  .completed-celeb-para,
+  .typewriter {
+    width: 100%;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 23px;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  #again-celebrate {
+    width: 135px;
+
+    font-size: 15px;
+  }
+
+}
